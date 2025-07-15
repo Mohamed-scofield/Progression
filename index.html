@@ -1,0 +1,1434 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Plan Laravel Pro - 8 Semaines</title>
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        />
+        <link rel="stylesheet" href="style.css" />
+        <link rel="manifest" href="manifest.json" />
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    </head>
+    <body data-theme="light">
+        <div class="background-grid"></div>
+
+        <div class="container">
+            <header class="header">
+                <div class="hero-badge">
+                    <i class="fas fa-rocket"></i> ÉVASION VERS UNE CARRIÈRE
+                    LARAVEL
+                </div>
+                <h1 class="main-title">
+                    PLAN LARAVEL : 8 SEMAINES POUR DEVENIR PRO
+                </h1>
+                <p class="subtitle">
+                    Code comme Scofield, planifie ton succès !
+                </p>
+            </header>
+
+            <div class="progress-container">
+                <div class="progress-header">
+                    <h2 class="progress-title">Votre Progression</h2>
+                    <div class="progress-stats">
+                        <div class="stat-item">
+                            <div class="stat-number" id="completedTasks">0</div>
+                            <div class="stat-label">Tâches terminées</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number" id="currentWeek">1</div>
+                            <div class="stat-label">Semaine actuelle</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number" id="daysLeft">56</div>
+                            <div class="stat-label">Jours restants</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number" id="motivationScore">
+                                10%
+                            </div>
+                            <div class="stat-label">Motivation moyenne</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="motivationFill"></div>
+                </div>
+                <div class="weeks-indicators">
+                    <div class="week-indicator active" data-week="1">1</div>
+                    <div class="week-indicator" data-week="2">2</div>
+                    <div class="week-indicator" data-week="3">3</div>
+                    <div class="week-indicator" data-week="4">4</div>
+                    <div class="week-indicator" data-week="5">5</div>
+                    <div class="week-indicator" data-week="6">6</div>
+                    <div class="week-indicator" data-week="7">7</div>
+                    <div class="week-indicator" data-week="8">8</div>
+                </div>
+            </div>
+
+            <div class="weeks-grid">
+                <div class="week-card" data-week="1">
+                    <div class="week-header">
+                        <div class="week-icon">
+                            <i class="fas fa-tools"></i>
+                        </div>
+                        <div>
+                            <h3 class="week-title">
+                                ÉTAPE 1 : Fondations Laravel
+                            </h3>
+                            <p class="week-subtitle">
+                                Installation et architecture MVC
+                            </p>
+                        </div>
+                    </div>
+                    <div class="week-objective">
+                        <div class="objective-title">Objectif Principal</div>
+                        <p>
+                            Configurer Laravel et comprendre l'architecture MVC
+                            avec un projet de gestion de notes
+                        </p>
+                    </div>
+                    <ul class="task-list">
+                        <li class="task-item" onclick="toggleTask(this)">
+                            <div class="task-checkbox"></div>
+                            <div class="task-text">
+                                Installer Laravel avec
+                                <code
+                                    >composer create-project laravel/laravel
+                                    projet-notes</code
+                                >
+                            </div>
+                        </li>
+                        <li class="task-item" onclick="toggleTask(this)">
+                            <div class="task-checkbox"></div>
+                            <div class="task-text">
+                                Configurer le fichier <code>.env</code> avec
+                                MySQL
+                            </div>
+                        </li>
+                        <li class="task-item" onclick="toggleTask(this)">
+                            <div class="task-checkbox"></div>
+                            <div class="task-text">
+                                Créer les routes dans
+                                <code>routes/web.php</code>
+                            </div>
+                        </li>
+                        <li class="task-item" onclick="toggleTask(this)">
+                            <div class="task-checkbox"></div>
+                            <div class="task-text">
+                                Créer la vue Blade
+                                <code>welcome.blade.php</code>
+                            </div>
+                        </li>
+                        <li class="task-item" onclick="toggleTask(this)">
+                            <div class="task-checkbox"></div>
+                            <div class="task-text">
+                                Créer le contrôleur
+                                <code>StudentController</code>
+                            </div>
+                        </li>
+                        <li class="task-item" onclick="toggleTask(this)">
+                            <div class="task-checkbox"></div>
+                            <div class="task-text">
+                                Créer un layout Blade avec
+                                <code>@yield</code> et <code>@section</code>
+                            </div>
+                        </li>
+                        <li class="task-item" onclick="toggleTask(this)">
+                            <div class="task-checkbox"></div>
+                            <div class="task-text">
+                                Utiliser des directives Blade (<code>@if</code>,
+                                <code>@foreach</code>)
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="milestone">Premier commit Git réalisé</div>
+                    <div class="obstacles">
+                        <div class="objective-title">Obstacles Rencontrés</div>
+                        <textarea
+                            placeholder="Ex. Bug installation Composer"
+                        ></textarea>
+                    </div>
+                    <div class="motivation-tracker">
+                        <div class="objective-title">Motivation (1-10)</div>
+                        <input
+                            type="range"
+                            min="1"
+                            max="10"
+                            value="1"
+                            oninput="saveMotivation(1, this.value)"
+                        />
+                    </div>
+                    <div class="week-stats">
+                        <div class="stat">
+                            <div class="stat-value">0/7</div>
+                            <div class="stat-label">Tâches</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-value">0%</div>
+                            <div class="stat-label">Complété</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="week-card" data-week="2">
+                    <div class="week-header">
+                        <div class="week-icon">
+                            <i class="fas fa-database"></i>
+                        </div>
+                        <div>
+                            <h3 class="week-title">
+                                ÉTAPE 2 : Eloquent & Base de Données
+                            </h3>
+                            <p class="week-subtitle">
+                                Gestion des données et relations
+                            </p>
+                        </div>
+                    </div>
+                    <div class="week-objective">
+                        <div class="objective-title">Objectif Principal</div>
+                        <p>
+                            Maîtriser Eloquent ORM et créer un CRUD complet avec
+                            upload de fichiers
+                        </p>
+                    </div>
+                    <ul class="task-list">
+                        <li class="task-item" onclick="toggleTask(this)">
+                            <div class="task-checkbox"></div>
+                            <div class="task-text">
+                                Créer migration
+                                <code>create_students_table</code>
+                            </div>
+                        </li>
+                        <li class="task-item" onclick="toggleTask(this)">
+                            <div class="task-checkbox"></div>
+                            <div class="task-text">
+                                Créer le modèle <code>Student</code>
+                            </div>
+                        </li>
+                        <li class="task-item" onclick="toggleTask(this)">
+                            <div class="task-checkbox"></div>
+                            <div class="task-text">
+                                Configurer les relations Eloquent
+                                (<code>hasMany</code>, <code>belongsTo</code>)
+                            </div>
+                        </li>
+                        <li class="task-item" onclick="toggleTask(this)">
+                            <div class="task-checkbox"></div>
+                            <div class="task-text">
+                                Implémenter le CRUD avec validation
+                            </div>
+                        </li>
+                        <li class="task-item" onclick="toggleTask(this)">
+                            <div class="task-checkbox"></div>
+                            <div class="task-text">
+                                Gérer l'upload de photos avec
+                                <code>FormData</code>
+                            </div>
+                        </li>
+                        <li class="task-item" onclick="toggleTask(this)">
+                            <div class="task-checkbox"></div>
+                            <div class="task-text">
+                                Créer des seeders avec
+                                <code>DatabaseSeeder</code>
+                            </div>
+                        </li>
+                        <li class="task-item" onclick="toggleTask(this)">
+                            <div class="task-checkbox"></div>
+                            <div class="task-text">
+                                Utiliser des factories pour générer des données
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="milestone">Premier CRUD fonctionnel</div>
+                    <div class="obstacles">
+                        <div class="objective-title">Obstacles Rencontrés</div>
+                        <textarea placeholder="Ex. Erreur migration"></textarea>
+                    </div>
+                    <div class="motivation-tracker">
+                        <div class="objective-title">Motivation (1-10)</div>
+                        <input
+                            type="range"
+                            min="1"
+                            max="10"
+                            value="1"
+                            oninput="saveMotivation(2, this.value)"
+                        />
+                    </div>
+                    <div class="week-stats">
+                        <div class="stat">
+                            <div class="stat-value">0/7</div>
+                            <div class="stat-label">Tâches</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-value">0%</div>
+                            <div class="stat-label">Complété</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="week-card" data-week="3">
+                    <div class="week-header">
+                        <div class="week-icon"><i class="fas fa-lock"></i></div>
+                        <div>
+                            <h3 class="week-title">
+                                ÉTAPE 3 : Authentification & Sécurité
+                            </h3>
+                            <p class="week-subtitle">
+                                Sécurité et gestion des utilisateurs
+                            </p>
+                        </div>
+                    </div>
+                    <div class="week-objective">
+                        <div class="objective-title">Objectif Principal</div>
+                        <p>
+                            Implémenter un système d'authentification avec rôles
+                            et permissions
+                        </p>
+                    </div>
+                    <ul class="task-list">
+                        <li class="task-item" onclick="toggleTask(this)">
+                            <div class="task-checkbox"></div>
+                            <div class="task-text">
+                                Installer Laravel Breeze
+                            </div>
+                        </li>
+                        <li class="task-item" onclick="toggleTask(this)">
+                            <div class="task-checkbox"></div>
+                            <div class="task-text">
+                                Configurer les rôles (admin, enseignant,
+                                étudiant)
+                            </div>
+                        </li>
+                        <li class="task-item" onclick="toggleTask(this)">
+                            <div class="task-checkbox"></div>
+                            <div class="task-text">
+                                Implémenter Spatie Laravel Permission
+                            </div>
+                        </li>
+                        <li class="task-item" onclick="toggleTask(this)">
+                            <div class="task-checkbox"></div>
+                            <div class="task-text">
+                                Valider formulaires (protection CSRF/XSS)
+                            </div>
+                        </li>
+                        <li class="task-item" onclick="toggleTask(this)">
+                            <div class="task-checkbox"></div>
+                            <div class="task-text">
+                                Créer une page de connexion stylée
+                            </div>
+                        </li>
+                        <li class="task-item" onclick="toggleTask(this)">
+                            <div class="task-checkbox"></div>
+                            <div class="task-text">
+                                Protéger contre les injections SQL
+                            </div>
+                        </li>
+                        <li class="task-item" onclick="toggleTask(this)">
+                            <div class="task-checkbox"></div>
+                            <div class="task-text">
+                                Configurer la protection contre le mass
+                                assignment
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="milestone">Authentification sécurisée</div>
+                    <div class="obstacles">
+                        <div class="objective-title">Obstacles Rencontrés</div>
+                        <textarea
+                            placeholder="Ex. Problème avec Spatie"
+                        ></textarea>
+                    </div>
+                    <div class="motivation-tracker">
+                        <div class="objective-title">Motivation (1-10)</div>
+                        <input
+                            type="range"
+                            min="1"
+                            max="10"
+                            value="1"
+                            oninput="saveMotivation(3, this.value)"
+                        />
+                    </div>
+                    <div class="week-stats">
+                        <div class="stat">
+                            <div class="stat-value">0/7</div>
+                            <div class="stat-label">Tâches</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-value">0%</div>
+                            <div class="stat-label">Complété</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="week-card" data-week="4">
+                    <div class="week-header">
+                        <div class="week-icon">
+                            <i class="fas fa-globe"></i>
+                        </div>
+                        <div>
+                            <h3 class="week-title">ÉTAPE 4 : API & Frontend</h3>
+                            <p class="week-subtitle">
+                                Création d'une API RESTful
+                            </p>
+                        </div>
+                    </div>
+                    <div class="week-objective">
+                        <div class="objective-title">Objectif Principal</div>
+                        <p>
+                            Construire une API RESTful et l'intégrer à un
+                            frontend dynamique
+                        </p>
+                    </div>
+                    <ul class="task-list">
+                        <li class="task-item" onclick="toggleTask(this)">
+                            <div class="task-checkbox"></div>
+                            <div class="task-text">
+                                Créer routes <code>api.php</code>
+                            </div>
+                        </li>
+                        <li class="task-item" onclick="toggleTask(this)">
+                            <div class="task-checkbox"></div>
+                            <div class="task-text">
+                                Créer contrôleur
+                                <code>API/StudentController</code>
+                            </div>
+                        </li>
+                        <li class="task-item" onclick="toggleTask(this)">
+                            <div class="task-checkbox"></div>
+                            <div class="task-text">
+                                Consommer API avec Axios
+                            </div>
+                        </li>
+                        <li class="task-item" onclick="toggleTask(this)">
+                            <div class="task-checkbox"></div>
+                            <div class="task-text">
+                                Installer Vue.js/Inertia.js
+                            </div>
+                        </li>
+                        <li class="task-item" onclick="toggleTask(this)">
+                            <div class="task-checkbox"></div>
+                            <div class="task-text">
+                                Créer tableau DataTables
+                            </div>
+                        </li>
+                        <li class="task-item" onclick="toggleTask(this)">
+                            <div class="task-checkbox"></div>
+                            <div class="task-text">
+                                Créer une Resource class pour l'API
+                            </div>
+                        </li>
+                        <li class="task-item" onclick="toggleTask(this)">
+                            <div class="task-checkbox"></div>
+                            <div class="task-text">
+                                Configurer Laravel Sanctum pour
+                                l'authentification API
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="milestone">API fonctionnelle</div>
+                    <div class="obstacles">
+                        <div class="objective-title">Obstacles Rencontrés</div>
+                        <textarea placeholder="Ex. Erreur CORS API"></textarea>
+                    </div>
+                    <div class="motivation-tracker">
+                        <div class="objective-title">Motivation (1-10)</div>
+                        <input
+                            type="range"
+                            min="1"
+                            max="10"
+                            value="1"
+                            oninput="saveMotivation(4, this.value)"
+                        />
+                    </div>
+                    <div class="week-stats">
+                        <div class="stat">
+                            <div class="stat-value">0/7</div>
+                            <div class="stat-label">Tâches</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-value">0%</div>
+                            <div class="stat-label">Complété</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="week-card" data-week="5">
+                    <div class="week-header">
+                        <div class="week-icon"><i class="fas fa-vial"></i></div>
+                        <div>
+                            <h3 class="week-title">
+                                ÉTAPE 5 : Tests & Optimisation
+                            </h3>
+                            <p class="week-subtitle">
+                                Tests automatisés et performances
+                            </p>
+                        </div>
+                    </div>
+                    <div class="week-objective">
+                        <div class="objective-title">Objectif Principal</div>
+                        <p>
+                            Implémenter une suite de tests complète et optimiser
+                            l'application
+                        </p>
+                    </div>
+                    <ul class="task-list">
+                        <li class="task-item" onclick="toggleTask(this)">
+                            <div class="task-checkbox"></div>
+                            <div class="task-text">Configurer PHPUnit/Pest</div>
+                        </li>
+                        <li class="task-item" onclick="toggleTask(this)">
+                            <div class="task-checkbox"></div>
+                            <div class="task-text">
+                                Écrire tests unitaires pour CRUD
+                            </div>
+                        </li>
+                        <li class="task-item" onclick="toggleTask(this)">
+                            <div class="task-checkbox"></div>
+                            <div class="task-text">
+                                Optimiser avec Redis/Memcached
+                            </div>
+                        </li>
+                        <li class="task-item" onclick="toggleTask(this)">
+                            <div class="task-checkbox"></div>
+                            <div class="task-text">
+                                Utiliser Telescope pour débogage
+                            </div>
+                        </li>
+                        <li class="task-item" onclick="toggleTask(this)">
+                            <div class="task-checkbox"></div>
+                            <div class="task-text">
+                                Documenter API avec Swagger
+                            </div>
+                        </li>
+                        <li class="task-item" onclick="toggleTask(this)">
+                            <div class="task-checkbox"></div>
+                            <div class="task-text">
+                                Écrire tests fonctionnels pour l'API
+                            </div>
+                        </li>
+                        <li class="task-item" onclick="toggleTask(this)">
+                            <div class="task-checkbox"></div>
+                            <div class="task-text">
+                                Configurer Laravel Dusk pour tests E2E
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="milestone">Application testée et optimisée</div>
+                    <div class="obstacles">
+                        <div class="objective-title">Obstacles Rencontrés</div>
+                        <textarea placeholder="Ex. Test échoué"></textarea>
+                    </div>
+                    <div class="motivation-tracker">
+                        <div class="objective-title">Motivation (1-10)</div>
+                        <input
+                            type="range"
+                            min="1"
+                            max="10"
+                            value="1"
+                            oninput="saveMotivation(5, this.value)"
+                        />
+                    </div>
+                    <div class="week-stats">
+                        <div class="stat">
+                            <div class="stat-value">0/7</div>
+                            <div class="stat-label">Tâches</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-value">0%</div>
+                            <div class="stat-label">Complété</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="week-card" data-week="6">
+                    <div class="week-header">
+                        <div class="week-icon">
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                        <div>
+                            <h3 class="week-title">ÉTAPE 6 : Déploiement</h3>
+                            <p class="week-subtitle">
+                                Production et automatisation
+                            </p>
+                        </div>
+                    </div>
+                    <div class="week-objective">
+                        <div class="objective-title">Objectif Principal</div>
+                        <p>Déployer l'application en production avec CI/CD</p>
+                    </div>
+                    <ul class="task-list">
+                        <li class="task-item" onclick="toggleTask(this)">
+                            <div class="task-checkbox"></div>
+                            <div class="task-text">
+                                Configurer Laravel Sail/Docker
+                            </div>
+                        </li>
+                        <li class="task-item" onclick="toggleTask(this)">
+                            <div class="task-checkbox"></div>
+                            <div class="task-text">
+                                Déployer sur DigitalOcean avec HTTPS
+                            </div>
+                        </li>
+                        <li class="task-item" onclick="toggleTask(this)">
+                            <div class="task-checkbox"></div>
+                            <div class="task-text">
+                                Configurer GitHub Actions pour CI/CD
+                            </div>
+                        </li>
+                        <li class="task-item" onclick="toggleTask(this)">
+                            <div class="task-checkbox"></div>
+                            <div class="task-text">
+                                Surveiller avec Laravel Horizon
+                            </div>
+                        </li>
+                        <li class="task-item" onclick="toggleTask(this)">
+                            <div class="task-checkbox"></div>
+                            <div class="task-text">Tester le déploiement</div>
+                        </li>
+                        <li class="task-item" onclick="toggleTask(this)">
+                            <div class="task-checkbox"></div>
+                            <div class="task-text">
+                                Configurer un Event et Listener
+                            </div>
+                        </li>
+                        <li class="task-item" onclick="toggleTask(this)">
+                            <div class="task-checkbox"></div>
+                            <div class="task-text">
+                                Créer un Observer pour le modèle
+                                <code>Student</code>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="milestone">Application déployée</div>
+                    <div class="obstacles">
+                        <div class="objective-title">Obstacles Rencontrés</div>
+                        <textarea
+                            placeholder="Ex. Erreur déploiement"
+                        ></textarea>
+                    </div>
+                    <div class="motivation-tracker">
+                        <div class="objective-title">Motivation (1-10)</div>
+                        <input
+                            type="range"
+                            min="1"
+                            max="10"
+                            value="1"
+                            oninput="saveMotivation(6, this.value)"
+                        />
+                    </div>
+                    <div class="week-stats">
+                        <div class="stat">
+                            <div class="stat-value">0/7</div>
+                            <div class="stat-label">Tâches</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-value">0%</div>
+                            <div class="stat-label">Complété</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="week-card" data-week="7">
+                    <div class="week-header">
+                        <div class="week-icon"><i class="fas fa-bolt"></i></div>
+                        <div>
+                            <h3 class="week-title">
+                                ÉTAPE 7 : Fonctionnalités Avancées
+                            </h3>
+                            <p class="week-subtitle">
+                                Notifications et tableaux de bord
+                            </p>
+                        </div>
+                    </div>
+                    <div class="week-objective">
+                        <div class="objective-title">Objectif Principal</div>
+                        <p>
+                            Ajouter des fonctionnalités avancées comme
+                            notifications et graphiques
+                        </p>
+                    </div>
+                    <ul class="task-list">
+                        <li class="task-item" onclick="toggleTask(this)">
+                            <div class="task-checkbox"></div>
+                            <div class="task-text">
+                                Configurer notifications email avec Mailgun
+                            </div>
+                        </li>
+                        <li class="task-item" onclick="toggleTask(this)">
+                            <div class="task-checkbox"></div>
+                            <div class="task-text">
+                                Implémenter recherche avec Laravel Scout
+                            </div>
+                        </li>
+                        <li class="task-item" onclick="toggleTask(this)">
+                            <div class="task-checkbox"></div>
+                            <div class="task-text">
+                                Créer graphiques avec Chart.js
+                            </div>
+                        </li>
+                        <li class="task-item" onclick="toggleTask(this)">
+                            <div class="task-checkbox"></div>
+                            <div class="task-text">
+                                Créer tableau de bord statistiques
+                            </div>
+                        </li>
+                        <li class="task-item" onclick="toggleTask(this)">
+                            <div class="task-checkbox"></div>
+                            <div class="task-text">
+                                Intégrer toutes les fonctionnalités
+                            </div>
+                        </li>
+                        <li class="task-item" onclick="toggleTask(this)">
+                            <div class="task-checkbox"></div>
+                            <div class="task-text">
+                                Configurer notifications Slack/SMS
+                            </div>
+                        </li>
+                        <li class="task-item" onclick="toggleTask(this)">
+                            <div class="task-checkbox"></div>
+                            <div class="task-text">
+                                Configurer notifications par base de données
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="milestone">Tableau de bord avancé</div>
+                    <div class="obstacles">
+                        <div class="objective-title">Obstacles Rencontrés</div>
+                        <textarea placeholder="Ex. Bug Chart.js"></textarea>
+                    </div>
+                    <div class="motivation-tracker">
+                        <div class="objective-title">Motivation (1-10)</div>
+                        <input
+                            type="range"
+                            min="1"
+                            max="10"
+                            value="1"
+                            oninput="saveMotivation(7, this.value)"
+                        />
+                    </div>
+                    <div class="week-stats">
+                        <div class="stat">
+                            <div class="stat-value">0/7</div>
+                            <div class="stat-label">Tâches</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-value">0%</div>
+                            <div class="stat-label">Complété</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="week-card" data-week="8">
+                    <div class="week-header">
+                        <div class="week-icon">
+                            <i class="fas fa-briefcase"></i>
+                        </div>
+                        <div>
+                            <h3 class="week-title">
+                                ÉTAPE 8 : Carrière & Emploi
+                            </h3>
+                            <p class="week-subtitle">
+                                Portfolio et candidatures
+                            </p>
+                        </div>
+                    </div>
+                    <div class="week-objective">
+                        <div class="objective-title">Objectif Principal</div>
+                        <p>
+                            Créer un portfolio professionnel et postuler à des
+                            emplois au Canada
+                        </p>
+                    </div>
+                    <ul class="task-list">
+                        <li class="task-item" onclick="toggleTask(this)">
+                            <div class="task-checkbox"></div>
+                            <div class="task-text">
+                                Créer un portfolio sur GitHub
+                            </div>
+                        </li>
+                        <li class="task-item" onclick="toggleTask(this)">
+                            <div class="task-checkbox"></div>
+                            <div class="task-text">
+                                Optimiser CV et LinkedIn
+                            </div>
+                        </li>
+                        <li class="task-item" onclick="toggleTask(this)">
+                            <div class="task-checkbox"></div>
+                            <div class="task-text">
+                                Préparer questions techniques
+                            </div>
+                        </li>
+                        <li class="task-item" onclick="toggleTask(this)">
+                            <div class="task-checkbox"></div>
+                            <div class="task-text">
+                                Simuler entretien technique
+                            </div>
+                        </li>
+                        <li class="task-item" onclick="toggleTask(this)">
+                            <div class="task-checkbox"></div>
+                            <div class="task-text">
+                                Postuler sur Larajobs/Indeed
+                            </div>
+                        </li>
+                        <li class="task-item" onclick="toggleTask(this)">
+                            <div class="task-checkbox"></div>
+                            <div class="task-text">
+                                Configurer le caching avec Laravel
+                            </div>
+                        </li>
+                        <li class="task-item" onclick="toggleTask(this)">
+                            <div class="task-checkbox"></div>
+                            <div class="task-text">
+                                Utiliser Laravel Debugbar pour analyser les
+                                performances
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="milestone">Portfolio professionnel prêt</div>
+                    <div class="obstacles">
+                        <div class="objective-title">Obstacles Rencontrés</div>
+                        <textarea
+                            placeholder="Ex. Questions entretien difficiles"
+                        ></textarea>
+                    </div>
+                    <div class="motivation-tracker">
+                        <div class="objective-title">Motivation (1-10)</div>
+                        <input
+                            type="range"
+                            min="1"
+                            max="10"
+                            value="1"
+                            oninput="saveMotivation(8, this.value)"
+                        />
+                    </div>
+                    <div class="week-stats">
+                        <div class="stat">
+                            <div class="stat-value">0/7</div>
+                            <div class="stat-label">Tâches</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-value">0%</div>
+                            <div class="stat-label">Complété</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dashboard">
+                <div class="dashboard-card">
+                    <h3 class="dashboard-title">Tracker Quotidien (heures)</h3>
+                    <div class="time-tracker">
+                        <div class="time-tracker-header">
+                            <div class="day-cell">S1</div>
+                            <div class="day-cell">S2</div>
+                            <div class="day-cell">S3</div>
+                            <div class="day-cell">S4</div>
+                            <div class="day-cell">S5</div>
+                            <div class="day-cell">S6</div>
+                            <div class="day-cell">S7</div>
+                            <div class="day-cell">S8</div>
+                        </div>
+                        <div class="day-cell" onclick="toggleDay(this)">
+                            Lun
+                        </div>
+                        <div class="day-cell" onclick="toggleDay(this)"></div>
+                        <div class="day-cell" onclick="toggleDay(this)"></div>
+                        <div class="day-cell" onclick="toggleDay(this)"></div>
+                        <div class="day-cell" onclick="toggleDay(this)"></div>
+                        <div class="day-cell" onclick="toggleDay(this)"></div>
+                        <div class="day-cell" onclick="toggleDay(this)"></div>
+                        <div class="day-cell" onclick="toggleDay(this)"></div>
+                        <div class="day-cell" onclick="toggleDay(this)">
+                            Mar
+                        </div>
+                        <div class="day-cell" onclick="toggleDay(this)"></div>
+                        <div class="day-cell" onclick="toggleDay(this)"></div>
+                        <div class="day-cell" onclick="toggleDay(this)"></div>
+                        <div class="day-cell" onclick="toggleDay(this)"></div>
+                        <div class="day-cell" onclick="toggleDay(this)"></div>
+                        <div class="day-cell" onclick="toggleDay(this)"></div>
+                        <div class="day-cell" onclick="toggleDay(this)"></div>
+                        <div class="day-cell" onclick="toggleDay(this)">
+                            Mer
+                        </div>
+                        <div class="day-cell" onclick="toggleDay(this)"></div>
+                        <div class="day-cell" onclick="toggleDay(this)"></div>
+                        <div class="day-cell" onclick="toggleDay(this)"></div>
+                        <div class="day-cell" onclick="toggleDay(this)"></div>
+                        <div class="day-cell" onclick="toggleDay(this)"></div>
+                        <div class="day-cell" onclick="toggleDay(this)"></div>
+                        <div class="day-cell" onclick="toggleDay(this)"></div>
+                        <div class="day-cell" onclick="toggleDay(this)">
+                            Jeu
+                        </div>
+                        <div class="day-cell" onclick="toggleDay(this)"></div>
+                        <div class="day-cell" onclick="toggleDay(this)"></div>
+                        <div class="day-cell" onclick="toggleDay(this)"></div>
+                        <div class="day-cell" onclick="toggleDay(this)"></div>
+                        <div class="day-cell" onclick="toggleDay(this)"></div>
+                        <div class="day-cell" onclick="toggleDay(this)"></div>
+                        <div class="day-cell" onclick="toggleDay(this)"></div>
+                        <div class="day-cell" onclick="toggleDay(this)">
+                            Ven
+                        </div>
+                        <div class="day-cell" onclick="toggleDay(this)"></div>
+                        <div class="day-cell" onclick="toggleDay(this)"></div>
+                        <div class="day-cell" onclick="toggleDay(this)"></div>
+                        <div class="day-cell" onclick="toggleDay(this)"></div>
+                        <div class="day-cell" onclick="toggleDay(this)"></div>
+                        <div class="day-cell" onclick="toggleDay(this)"></div>
+                        <div class="day-cell" onclick="toggleDay(this)"></div>
+                        <div class="day-cell" onclick="toggleDay(this)">
+                            Sam
+                        </div>
+                        <div class="day-cell" onclick="toggleDay(this)"></div>
+                        <div class="day-cell" onclick="toggleDay(this)"></div>
+                        <div class="day-cell" onclick="toggleDay(this)"></div>
+                        <div class="day-cell" onclick="toggleDay(this)"></div>
+                        <div class="day-cell" onclick="toggleDay(this)"></div>
+                        <div class="day-cell" onclick="toggleDay(this)"></div>
+                        <div class="day-cell" onclick="toggleDay(this)"></div>
+                        <div class="day-cell" onclick="toggleDay(this)">
+                            Dim
+                        </div>
+                        <div class="day-cell" onclick="toggleDay(this)"></div>
+                        <div class="day-cell" onclick="toggleDay(this)"></div>
+                        <div class="day-cell" onclick="toggleDay(this)"></div>
+                        <div class="day-cell" onclick="toggleDay(this)"></div>
+                        <div class="day-cell" onclick="toggleDay(this)"></div>
+                        <div class="day-cell" onclick="toggleDay(this)"></div>
+                        <div class="day-cell" onclick="toggleDay(this)"></div>
+                    </div>
+                </div>
+                <div class="dashboard-card">
+                    <h3 class="dashboard-title">Ressources Utiles</h3>
+                    <div
+                        style="
+                            display: flex;
+                            flex-direction: column;
+                            gap: 0.75rem;
+                        "
+                    >
+                        <a
+                            href="https://laravel.com/docs"
+                            style="
+                                color: var(--primary);
+                                text-decoration: none;
+                                padding: 0.5rem;
+                                border: 1px solid var(--border);
+                                border-radius: 8px;
+                                transition: all 0.3s ease;
+                                font-size: 12pt;
+                            "
+                        >
+                            <i class="fas fa-book"></i> Documentation Laravel
+                        </a>
+                        <a
+                            href="https://laracasts.com"
+                            style="
+                                color: var(--primary);
+                                text-decoration: none;
+                                padding: 0.5rem;
+                                border: 1px solid var(--border);
+                                border-radius: 8px;
+                                transition: all 0.3s ease;
+                                font-size: 12pt;
+                            "
+                        >
+                            <i class="fas fa-video"></i> Laracasts
+                        </a>
+                        <a
+                            href="https://github.com"
+                            style="
+                                color: var(--primary);
+                                text-decoration: none;
+                                padding: 0.5rem;
+                                border: 1px solid var(--border);
+                                border-radius: 8px;
+                                transition: all 0.3s ease;
+                                font-size: 12pt;
+                            "
+                        >
+                            <i class="fab fa-github"></i> GitHub
+                        </a>
+                        <a
+                            href="https://larajobs.com"
+                            style="
+                                color: var(--primary);
+                                text-decoration: none;
+                                padding: 0.5rem;
+                                border: 1px solid var(--border);
+                                border-radius: 8px;
+                                transition: all 0.3s ease;
+                                font-size: 12pt;
+                            "
+                        >
+                            <i class="fas fa-briefcase"></i> Larajobs
+                        </a>
+                        <a
+                            href="https://spatie.be/docs/laravel-permission"
+                            style="
+                                color: var(--primary);
+                                text-decoration: none;
+                                padding: 0.5rem;
+                                border: 1px solid var(--border);
+                                border-radius: 8px;
+                                transition: all 0.3s ease;
+                                font-size: 12pt;
+                            "
+                        >
+                            <i class="fas fa-shield-alt"></i> Spatie Laravel
+                            Permission
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="motivation-quote">
+                La patience est la clé du succès. Chaque ligne de code vous
+                rapproche de votre évasion professionnelle. - Michael Scofield
+            </div>
+
+            <div class="project-photo">
+                <h3 class="dashboard-title">Photo du Projet</h3>
+                <div class="photo-placeholder">
+                    Coller screenshot du projet final ici
+                </div>
+            </div>
+        </div>
+
+        <button
+            class="theme-toggle"
+            onclick="toggleTheme()"
+            title="Changer de thème"
+        >
+            <i class="fas fa-moon"></i>
+        </button>
+        <button
+            class="floating-action"
+            onclick="resetProgress()"
+            title="Réinitialiser le progrès"
+        >
+            <i class="fas fa-redo"></i>
+        </button>
+
+        <script>
+            if ("serviceWorker" in navigator) {
+                navigator.serviceWorker
+                    .register("service-worker.js")
+                    .then(function (registration) {
+                        console.log(
+                            "Service Worker enregistré avec succès:",
+                            registration.scope
+                        );
+                    })
+                    .catch(function (error) {
+                        console.log(
+                            "Échec de l’enregistrement du Service Worker:",
+                            error
+                        );
+                    });
+            }
+
+            let totalTasks = 0;
+            let completedTasks = 0;
+            let currentWeek = 1;
+            let motivationScores = Array(8).fill(1);
+            let timeTracker = Array(7)
+                .fill()
+                .map(() => Array(8).fill(""));
+
+            document.addEventListener("DOMContentLoaded", () => {
+                initializeApp();
+                loadProgress();
+                loadMotivation();
+                loadTimeTracker();
+                updateUI();
+                updateTaskStatus();
+            });
+
+            function initializeApp() {
+                totalTasks = document.querySelectorAll(".task-item").length;
+
+                document
+                    .querySelectorAll(
+                        ".day-cell:not(.time-tracker-header .day-cell)"
+                    )
+                    .forEach((cell) => {
+                        cell.addEventListener("click", () => toggleDay(cell));
+                    });
+
+                document.querySelectorAll("a").forEach((link) => {
+                    link.addEventListener("mouseenter", () => {
+                        link.style.background = "var(--gray-light)";
+                    });
+                    link.addEventListener("mouseleave", () => {
+                        link.style.background = "transparent";
+                    });
+                });
+
+                document
+                    .querySelectorAll(".week-indicator")
+                    .forEach((indicator) => {
+                        indicator.addEventListener("click", () => {
+                            const weekNumber =
+                                indicator.getAttribute("data-week");
+                            const targetCard = document.querySelector(
+                                `[data-week="${weekNumber}"]`
+                            );
+                            if (targetCard) {
+                                targetCard.scrollIntoView({
+                                    behavior: "smooth",
+                                    block: "start",
+                                });
+                            }
+                        });
+                    });
+            }
+
+            function toggleTask(taskElement) {
+                const checkbox = taskElement.querySelector(".task-checkbox");
+                const taskText = taskElement.querySelector(".task-text");
+                const weekCard = taskElement.closest(".week-card");
+                const weekNumber = parseInt(weekCard.getAttribute("data-week"));
+                const tasksInWeek =
+                    weekCard.querySelectorAll(".task-item").length;
+                const completedInWeek = weekCard.querySelectorAll(
+                    ".task-checkbox.completed"
+                ).length;
+
+                let newMotivation;
+                if (checkbox.classList.contains("completed")) {
+                    checkbox.classList.remove("completed");
+                    taskText.classList.remove("completed");
+                    taskElement.classList.remove("done");
+                    completedTasks--;
+                    newMotivation = Math.max(
+                        1,
+                        Math.round(((completedInWeek - 1) / tasksInWeek) * 10)
+                    );
+                    motivationScores[weekNumber - 1] = newMotivation;
+                    Swal.fire({
+                        title: "Tâche annulée",
+                        text: `Motivation pour la semaine ${weekNumber} réduite à ${newMotivation}/10.`,
+                        icon: "info",
+                        confirmButtonText: "Continuer",
+                    });
+                } else {
+                    checkbox.classList.add("completed");
+                    taskText.classList.add("completed");
+                    taskElement.classList.add("done");
+                    taskElement.classList.remove("progress", "future");
+                    completedTasks++;
+                    newMotivation = Math.min(
+                        10,
+                        Math.round(((completedInWeek + 1) / tasksInWeek) * 10)
+                    );
+                    motivationScores[weekNumber - 1] = newMotivation;
+                    Swal.fire({
+                        title: "Félicitations !",
+                        text: `Tâche "${taskText.textContent}" terminée ! Motivation pour la semaine ${weekNumber} augmentée à ${newMotivation}/10.`,
+                        icon: "success",
+                        confirmButtonText: "Continuer",
+                    });
+                }
+
+                const motivationInput = weekCard.querySelector(
+                    ".motivation-tracker input"
+                );
+                motivationInput.value = newMotivation;
+
+                updateUI();
+                updateWeekStats();
+                saveProgress();
+                saveMotivation(weekNumber, newMotivation);
+            }
+
+            function toggleDay(cell) {
+                const row =
+                    Array.from(cell.parentElement.children).indexOf(cell) - 8;
+                const col = Math.floor(
+                    Array.from(document.querySelectorAll(".day-cell")).indexOf(
+                        cell
+                    ) / 8
+                );
+                if (row >= 0 && col >= 1) {
+                    cell.classList.toggle("active");
+                    timeTracker[row][col - 1] = cell.classList.contains(
+                        "active"
+                    )
+                        ? prompt("Heures travaillées :") || ""
+                        : "";
+                    cell.textContent = timeTracker[row][col - 1];
+                    saveTimeTracker();
+                }
+            }
+
+            function updateTaskStatus() {
+                document
+                    .querySelectorAll(".task-item")
+                    .forEach((task, index) => {
+                        const week = Math.floor(index / 7) + 1;
+                        task.classList.remove("progress", "future");
+                        if (
+                            week === currentWeek &&
+                            !task.classList.contains("done")
+                        ) {
+                            task.classList.add("progress");
+                        } else if (
+                            week > currentWeek &&
+                            !task.classList.contains("done")
+                        ) {
+                            task.classList.add("future");
+                        }
+                    });
+            }
+
+            function updateUI() {
+                const progressPercent =
+                    totalTasks > 0 ? (completedTasks / totalTasks) * 100 : 0;
+                document.getElementById(
+                    "progressFill"
+                ).style.width = `${progressPercent}%`;
+
+                currentWeek = Math.min(
+                    8,
+                    Math.floor(progressPercent / 12.5) + 1
+                );
+                document.getElementById("completedTasks").textContent =
+                    completedTasks;
+                document.getElementById("currentWeek").textContent =
+                    currentWeek;
+                const daysLeft = Math.max(
+                    0,
+                    56 - Math.floor((progressPercent / 100) * 56)
+                );
+                document.getElementById("daysLeft").textContent = daysLeft;
+
+                const motivationPercent =
+                    (motivationScores.reduce(
+                        (a, b) => parseInt(a) + parseInt(b),
+                        0
+                    ) /
+                        (8 * 10)) *
+                    100;
+                document.getElementById(
+                    "motivationFill"
+                ).style.width = `${motivationPercent}%`;
+                document.getElementById(
+                    "motivationScore"
+                ).textContent = `${Math.round(motivationPercent)}%`;
+
+                document
+                    .querySelectorAll(".week-indicator")
+                    .forEach((indicator, index) => {
+                        indicator.classList.remove("active", "completed");
+                        if (index + 1 < currentWeek) {
+                            indicator.classList.add("completed");
+                        } else if (index + 1 === currentWeek) {
+                            indicator.classList.add("active");
+                        }
+                    });
+            }
+
+            function updateWeekStats() {
+                document.querySelectorAll(".week-card").forEach((card) => {
+                    const tasks = card.querySelectorAll(".task-item");
+                    const completedInWeek = card.querySelectorAll(
+                        ".task-checkbox.completed"
+                    ).length;
+                    const totalInWeek = tasks.length;
+                    const percentComplete =
+                        totalInWeek > 0
+                            ? Math.round((completedInWeek / totalInWeek) * 100)
+                            : 0;
+                    card.querySelector(
+                        ".stat-value"
+                    ).textContent = `${completedInWeek}/${totalInWeek}`;
+                    card.querySelectorAll(
+                        ".stat-value"
+                    )[1].textContent = `${percentComplete}%`;
+                });
+            }
+
+            function saveProgress() {
+                const progress = Array.from(
+                    document.querySelectorAll(".task-checkbox")
+                ).map((checkbox) => checkbox.classList.contains("completed"));
+                localStorage.setItem(
+                    "laravelPlanProgress",
+                    JSON.stringify(progress)
+                );
+            }
+
+            function loadProgress() {
+                const savedProgress = localStorage.getItem(
+                    "laravelPlanProgress"
+                );
+                if (savedProgress) {
+                    const progress = JSON.parse(savedProgress);
+                    document
+                        .querySelectorAll(".task-checkbox")
+                        .forEach((checkbox, index) => {
+                            if (progress[index]) {
+                                checkbox.classList.add("completed");
+                                checkbox.nextElementSibling.classList.add(
+                                    "completed"
+                                );
+                                checkbox.parentElement.classList.add("done");
+                                completedTasks++;
+                            }
+                        });
+                    updateMotivationFromTasks();
+                    updateUI();
+                    updateWeekStats();
+                    updateTaskStatus();
+                }
+            }
+
+            function saveMotivation(week, value) {
+                motivationScores[week - 1] = value;
+                localStorage.setItem(
+                    "laravelPlanMotivation",
+                    JSON.stringify(motivationScores)
+                );
+            }
+
+            function loadMotivation() {
+                const savedMotivation = localStorage.getItem(
+                    "laravelPlanMotivation"
+                );
+                if (savedMotivation) {
+                    motivationScores = JSON.parse(savedMotivation);
+                    document
+                        .querySelectorAll(".motivation-tracker input")
+                        .forEach((input, index) => {
+                            input.value = motivationScores[index];
+                        });
+                    updateUI();
+                }
+            }
+
+            function updateMotivationFromTasks() {
+                document.querySelectorAll(".week-card").forEach((card) => {
+                    const weekNumber = parseInt(card.getAttribute("data-week"));
+                    const tasksInWeek =
+                        card.querySelectorAll(".task-item").length;
+                    const completedInWeek = card.querySelectorAll(
+                        ".task-checkbox.completed"
+                    ).length;
+                    const newMotivation = Math.max(
+                        1,
+                        Math.round((completedInWeek / tasksInWeek) * 10)
+                    );
+                    motivationScores[weekNumber - 1] = newMotivation;
+                    const motivationInput = card.querySelector(
+                        ".motivation-tracker input"
+                    );
+                    motivationInput.value = newMotivation;
+                });
+                saveMotivation();
+            }
+
+            function saveTimeTracker() {
+                localStorage.setItem(
+                    "laravelPlanTimeTracker",
+                    JSON.stringify(timeTracker)
+                );
+            }
+
+            function loadTimeTracker() {
+                const savedTimeTracker = localStorage.getItem(
+                    "laravelPlanTimeTracker"
+                );
+                if (savedTimeTracker) {
+                    timeTracker = JSON.parse(savedTimeTracker);
+                    document
+                        .querySelectorAll(
+                            ".day-cell:not(.time-tracker-header .day-cell)"
+                        )
+                        .forEach((cell, index) => {
+                            const row = Math.floor(index / 8);
+                            const col = index % 8;
+                            cell.textContent = timeTracker[row][col];
+                            if (timeTracker[row][col])
+                                cell.classList.add("active");
+                        });
+                }
+            }
+
+            function resetProgress() {
+                Swal.fire({
+                    title: "Êtes-vous sûr ?",
+                    text: "Voulez-vous vraiment réinitialiser tout le progrès ?",
+                    icon: "warning",
+                    showCancelButton: true,
+                    confirmButtonText: "Oui, réinitialiser",
+                    cancelButtonText: "Annuler",
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        document
+                            .querySelectorAll(".task-checkbox")
+                            .forEach((checkbox) => {
+                                checkbox.classList.remove("completed");
+                                checkbox.nextElementSibling.classList.remove(
+                                    "completed"
+                                );
+                                checkbox.parentElement.classList.remove(
+                                    "done",
+                                    "progress",
+                                    "future"
+                                );
+                            });
+                        document
+                            .querySelectorAll(
+                                ".day-cell:not(.time-tracker-header .day-cell)"
+                            )
+                            .forEach((cell) => {
+                                cell.classList.remove("active");
+                                cell.textContent = "";
+                            });
+                        document
+                            .querySelectorAll(".motivation-tracker input")
+                            .forEach((input) => {
+                                input.value = 1;
+                            });
+                        completedTasks = 0;
+                        motivationScores = Array(8).fill(1);
+                        timeTracker = Array(7)
+                            .fill()
+                            .map(() => Array(8).fill(""));
+                        updateUI();
+                        updateWeekStats();
+                        updateTaskStatus();
+                        localStorage.removeItem("laravelPlanProgress");
+                        localStorage.removeItem("laravelPlanMotivation");
+                        localStorage.removeItem("laravelPlanTimeTracker");
+                        Swal.fire(
+                            "Réinitialisé !",
+                            "Votre progression a été réinitialisée.",
+                            "success"
+                        );
+                    }
+                });
+            }
+
+            function toggleTheme() {
+                const body = document.body;
+                const currentTheme = body.getAttribute("data-theme");
+                body.setAttribute(
+                    "data-theme",
+                    currentTheme === "light" ? "dark" : "light"
+                );
+                document.querySelector(".theme-toggle i").className =
+                    currentTheme === "light" ? "fas fa-sun" : "fas fa-moon";
+            }
+        </script>
+    </body>
+</html>
